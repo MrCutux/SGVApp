@@ -1,0 +1,7 @@
+{
+  "name": "SGVApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
