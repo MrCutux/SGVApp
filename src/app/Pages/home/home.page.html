@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="white">
+        <ion-title class="ion-text-center" style="font-size: 15px" color="azulbombero">
+            SGV Primera Compañía
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="white">
+    <div class="ion-padding-vertical">
+        <ion-card class="ion-text-center" color="white" style="width: 90%; margin-top: 0%;">
+            <ion-card-title>
+                <ion-label class="ion-text-center" color="azulbombero">
+                    <h1 style="font-family: BebasNeue; font-size: 32px;">Login</h1>
+                </ion-label>
+            </ion-card-title>
+            <ion-card-content>
+                <ion-item color="white">
+                    <ion-label position="floating" color="azulbombero" style="font-family: BebasNeue; font-size: 20px;">Usuario</ion-label>
+                    <ion-input type="text" [(ngModel)]="user" style="font-family: BebasNeue;"></ion-input>
+                </ion-item>
+                <ion-item color="white">
+                    <ion-label position="floating" color="azulbombero" style="font-family: BebasNeue;  font-size: 20px">Contraseña</ion-label>
+                    <ion-input type="password" [(ngModel)]="pass"></ion-input>
+                </ion-item>
+            </ion-card-content>
+            <ion-button expand="block" (click)="validar()" color="colortres" style="font-family: BebasNeue; font-size: 20px;">
+                <p style="text-align: center; font-family: BebasNeue;margin: auto;" color="azulbombero">INGRESAR</p>
+            </ion-button>            
+        </ion-card>
+    </div>
+    <ion-footer align=" center ">
+        <img src="assets/images/Logos_ComAsNacional_Bomberos-de-Chile.png " style="width:80%; height: 20%;">
+    </ion-footer>
+</ion-content>

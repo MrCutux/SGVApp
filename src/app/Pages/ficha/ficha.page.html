@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar color="white">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title style="text-align: center; font-family: BebasNeue;" color="azulbombero">Ficha de bombero</ion-title>
+        <!-- Segment -->
+        <ion-segment (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="uno">
+                <ion-icon name="id-card-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="dos">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="tres">
+                <ion-icon name="ribbon-outline"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="white">
+    <ion-router-outlet></ion-router-outlet>
+</ion-content>

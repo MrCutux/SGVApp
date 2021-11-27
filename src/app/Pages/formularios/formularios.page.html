@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="white">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title style="font-family: BebasNeue; text-align: center;">Enviar solicitud</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="white">
+    <ion-card color="white">
+        <ion-title class="ion-padding-top ion-text-center">
+            <h4 style="font-family: BebasNeue; text-align: center; font-size: 25px;">Formulario de solicitud</h4>
+        </ion-title>
+        <ion-item color="white">
+            <ion-label position="floating" style="font-family: BebasNeue; text-align: left;"> Rut</ion-label>
+            <ion-input type="text" [(ngModel)]="rut"></ion-input>
+        </ion-item>
+        <ion-item color="white">
+            <ion-label position="stacked" class="ion-padding-bottom" style="font-family: BebasNeue; text-align: left;"> Tipo</ion-label>
+            <ion-select placeholder=" Seleccione tipo solicitud " [(ngModel)]="tipo ">
+                <ion-select-option *ngFor="let v of bomberos " [value]="v.id ">{{v.tipo}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item color="white ">
+            <ion-label style="font-family: BebasNeue; text-align: left;">Solicitud</ion-label>
+            <ion-textarea rows=" 6 " cols="20 " [(ngModel)]="texto" placeholder="Escriba aquí... "></ion-textarea>
+        </ion-item>
+    </ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <ion-button shape="block " (click)="limpiar() " color="colortres ">Limpiar</ion-button>
+            </ion-col>
+            <ion-col col-6>
+                <ion-button shape="block " (click)="guardar() " color="colortres ">Enviar</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

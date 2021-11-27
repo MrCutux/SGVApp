@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar color="white">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title style="font-family: BebasNeue; text-align: center;font-size: 19px;" color="azulbombero">SGV Primera Compañía</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="white">
+    <ion-card color="white" style="border-top: 5px solid azulbombero;">
+        <ion-card-title>
+            <ion-label class="ion-text-center" color="azulbombero">
+                <h1 style="font-family: BebasNeue; font-size: 30px;">Inicio</h1>
+            </ion-label>
+        </ion-card-title>
+        <ion-avatar class="ion-margin-start">
+            <img src="assets/images/pngwing.com.png ">
+        </ion-avatar>
+        <ion-card-content>
+            <ion-item lines="none" color="white">
+                <!--{{interpolación}}
+        acá se muestra el dato que viene desde el .ts a la visual-->
+                <ion-label style="font-family: BebasNeue;font-size: 20px; text-align: center;" color="azulbombero">Usuario: {{user}}</ion-label>
+            </ion-item>
+        </ion-card-content>
+        <ion-button expand="block" (click)="ficha()" color="colortres" style="font-family: BebasNeue;font-size: 15px;">Ficha de bombero</ion-button>
+        <ion-button expand="block" (click)="mostrarSpinner()" color="colortres" style="font-family: BebasNeue;font-size: 15px;">Registrar asistencia</ion-button>
+        <ion-button expand="block" (click)="solicitud()" color="colortres" style="font-family: BebasNeue; font-size: 15px;">Enviar solicitud</ion-button>
+        <ion-spinner *ngIf="mostrar" name="bubbles"></ion-spinner>
+        <ion-button expand="block" (click)="salir()" color="colorcuatro" style="font-family: BebasNeue; font-size: 15px;">Salir</ion-button>
+    </ion-card>
+    <!-- fab placed to the bottom end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="white" size="small">
+            <ion-icon name="caret-back-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="start">
+            <ion-fab-button color="facebook" href="https://www.facebook.com/primeraquilpue" routerDirection="forward">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button color="instagram" href="https://www.instagram.com/primeraquilpue/" routerDirection="forward">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button color="twitter" href="https://twitter.com/primeraquilpue" routerDirection="forward">
+                <ion-icon name="logo-twitter"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button color="youtube" href="https://www.youtube.com/primeraquilpue" routerDirection="forward">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color="white">
+        <ion-title size=small style="text-align: center; font-family: BebasNeue;font-size: 15px;" color="azulbombero">Esta App fue creada para Primera Quilpué</ion-title>
+    </ion-toolbar>
+</ion-footer>
