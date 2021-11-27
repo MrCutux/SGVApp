@@ -112,7 +112,7 @@
             "password": "165339829"
         },
         {
-            "rut": "13577432-8",
+            "rut": "13766158-6",
             "nombre1": "Mauricio",
             "apellido1": "Cuturrufo",
             "apellido2": "Gonzalez",
@@ -120,12 +120,12 @@
             "ciudad": "Quilpue",
             "fechanac": "21-03-1980",
             "compañia": "Primera",
-            "fechaingreso": "11-11-1999",
-            "nreg": "0998",
+            "fechaingreso": "07-06-1999",
+            "nreg": "1029",
             "cargo": "Bombero Honorario",
             "estado": "Activo",
             "usuario": "MCuturrufo",
-            "password": "135774328"
+            "password": "137661586"
         },
         {
             "rut": "18431784-k",
@@ -142,6 +142,22 @@
             "estado": "Activo",
             "usuario": "BRojas",
             "password": "18431784k"
+        },
+        {
+            "rut": "16018512-0",
+            "nombre1": "Diego",
+            "apellido1": "Herrera",
+            "apellido2": "Martínez",
+            "direccion": "Berna 124",
+            "ciudad": "Quilpue",
+            "fechanac": "14-08-1985",
+            "compañia": "Primera",
+            "fechaingreso": "18-12-2004",
+            "nreg": "0529",
+            "cargo": "Director",
+            "estado": "Activo",
+            "usuario": "DHerrera",
+            "password": "160185120"
         },
         {
             "rut": "19772364-5",
