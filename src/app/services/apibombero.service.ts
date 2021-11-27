@@ -13,12 +13,12 @@ export class ApibomberoService {
     'Access-Control-Allow-Origin' :'*'
     })
   }
-  apiURL="http://192.168.56.1:3000";
+  apiURL="https://raw.githubusercontent.com/MrCutux/SGVApp/master/apibomb.json";
   constructor(private http: HttpClient) { 
 
   }
   getBomberos():Observable<any>{
-    return this.http.get(this.apiURL+'/bomberos/').pipe(
+    return this.http.get(this.apiURL).pipe(
       retry(3)
     );
 }
