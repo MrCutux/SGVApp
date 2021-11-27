@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root'
@@ -22,18 +23,6 @@ export class ApibomberoService {
       retry(3)
     );
 }
-createBomberos(bomberos):Observable<any>{
-  return this.http.post(this.apiURL+'/bomberos/',bomberos,this.httpOptions)
-  .pipe(
-    retry(3)
-  )
-}
-updateBombero(id,alumno):Observable<any>{
-  return this.http.put(this.apiURL+'/companniasv/'+id,alumno,this.httpOptions).pipe(retry(3));
-}
-deleteBombero(id):Observable<any>{
-  return this.http.delete(this.apiURL+'/companniasv'+id,this.httpOptions);
-}
 
 user:any;
 guardarUsuario(user:any){
@@ -43,4 +32,29 @@ guardarUsuario(user:any){
 mostrarUsuario(){
   return this.user;
 }
+
+dato: any;
+obtenerDatos(obj: any){
+  //console.log(obj);
+  this.dato = obj;
+
+}
+
+mostrarDatos(){
+  console.log(this.dato);
+}
+
+camara(){
+  const takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri
+    });
+    
+  }
+  takePicture();
+ 
+}
+
 }

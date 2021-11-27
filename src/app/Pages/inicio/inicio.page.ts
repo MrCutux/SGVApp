@@ -33,6 +33,10 @@ export class InicioPage implements OnInit {
     }, 3000)
     
   };
+
+  activarCamara(){
+    this.api.camara();
+  }
  async presentAlert(msg: string) {
     const alert = await this.alertController.create({
       cssClass: 'ion-text-center',
@@ -64,8 +68,13 @@ export class InicioPage implements OnInit {
   }
 
   salir(){
+    //location.
     this.router.navigate(['/home'],)
+    
+    
   }
+
+  
 
   getCompannia(){
     

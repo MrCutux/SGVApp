@@ -17,11 +17,11 @@
             <ion-card-content>
                 <ion-item color="white">
                     <ion-label position="floating" color="azulbombero" style="font-family: BebasNeue; font-size: 20px;">Usuario</ion-label>
-                    <ion-input type="text" [(ngModel)]="user" style="font-family: BebasNeue;"></ion-input>
+                    <ion-input type="text" [(ngModel)]="usuario.user" style="font-family: BebasNeue;"></ion-input>
                 </ion-item>
                 <ion-item color="white">
                     <ion-label position="floating" color="azulbombero" style="font-family: BebasNeue;  font-size: 20px">Contraseña</ion-label>
-                    <ion-input type="password" [(ngModel)]="pass"></ion-input>
+                    <ion-input type="password" [(ngModel)]="usuario.pass"></ion-input>
                 </ion-item>
             </ion-card-content>
             <ion-button expand="block" (click)="validar()" color="colortres" style="font-family: BebasNeue; font-size: 20px;">
