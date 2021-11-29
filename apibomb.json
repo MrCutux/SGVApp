@@ -160,6 +160,22 @@
             "password": "160185120"
         },
         {
+            "rut": "111",
+            "nombre1": "Prueba",
+            "apellido1": "Prueba",
+            "apellido2": "Prueba",
+            "direccion": "Prueba 124",
+            "ciudad": "Quilpue",
+            "fechanac": "Prueba",
+            "compañia": "Primera",
+            "fechaingreso": "Prueba-Prueba",
+            "nreg": "Prueba",
+            "cargo": "Prueba",
+            "estado": "Prueba",
+            "usuario": "nnn",
+            "password": "111"
+        },
+        {
             "rut": "19772364-5",
             "nombre1": "Felipe",
             "apellido1": "Cuadra",
