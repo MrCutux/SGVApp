@@ -14,7 +14,8 @@ export class HomePage implements OnInit{
   // Objeto usuario
   usuario: any ={
     user:'',
-    pass:''
+    pass:'',
+    rut: ''
   };
   /* user:string;
   pass:string; */
@@ -80,7 +81,7 @@ export class HomePage implements OnInit{
   inicio(){
     //declaramos e instanciamos un elemento NAvigationExtras (para pasar parámetros)
     let navigationExtras: NavigationExtras={
-      state:{user: this.usuario.user, pass: this.usuario.pass} //asignamos un elemento con clave y valor
+      state:{user: this.usuario.user, pass: this.usuario.pass, rut: this.usuario.rut} //asignamos un elemento con clave y valor
     };
     //utilizamos API enrutador para llamar a la siguiente página
     //le damos el navigationExtras como parámetro para enviar el dato
@@ -119,6 +120,7 @@ export class HomePage implements OnInit{
               //console.log(bombero[i].usuario);
               if(this.usuario.user === bombero[i].usuario && this.usuario.pass === bombero[i].password){
                 console.log("Verificado");
+                this.usuario.rut = bombero[i].rut;
                 this.inicio();
                 break;
               }

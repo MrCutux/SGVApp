@@ -4,40 +4,44 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { ApibomberoService } from 'src/app/services/apibombero.service';
 
 @Component({
-  selector: 'app-inicio', 
+  selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
+
 export class InicioPage implements OnInit {
   mostrar = false;
-  user:any;
-  compannia:any;
+  user: any;
+  rut: any;
+  compannia: any;
   constructor(private activeroute: ActivatedRoute,
-     private router:Router,
-     public toastController: ToastController,
-     public alertController: AlertController, 
-     private api: ApibomberoService) {
-    this.activeroute.queryParams.subscribe(params=> {
-      if(this.router.getCurrentNavigation().extras.state){ //verifico si extras viene con valor
-        this.user=this.router.getCurrentNavigation().extras.state.user;
+    private router: Router,
+    public toastController: ToastController,
+    public alertController: AlertController,
+    private api: ApibomberoService) {
+    this.activeroute.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) { //verifico si extras viene con valor
+        this.user = this.router.getCurrentNavigation().extras.state.user;
+        this.rut = this.router.getCurrentNavigation().extras.state.rut;
+        api.guardarRut(this.rut);
         api.guardarUsuario(this.user) //comprobamos en consola que es lo que tiene el parámetro
       }
     });
-   }
+  }
 
-  mostrarSpinner(){
-    this.mostrar =   true;
+  mostrarSpinner() {
+    this.mostrar = true;
     setTimeout(() => {
       this.mostrar = false;
       this.presentAlert('No se pudo llevar a cabo');
     }, 3000)
-    
   };
 
-  activarCamara(){
+  activarCamara() {
     this.api.camara();
   }
- async presentAlert(msg: string) {
+
+  async presentAlert(msg: string) {
     const alert = await this.alertController.create({
       cssClass: 'ion-text-center',
       header: msg,
@@ -56,27 +60,24 @@ export class InicioPage implements OnInit {
     });
     alert.present();
   }
+
   ngOnInit() {
   }
 
-  solicitud(){
+  solicitud() {
     this.router.navigate(['/formularios'],)
   }
 
-  ficha(){
+  ficha() {
     this.router.navigate(['/ficha/uno'],)
   }
 
-  salir(){
+  salir() {
     //location.
     this.router.navigate(['/home'],)
-    
-    
   }
 
-  
+  getCompannia() {
 
-  getCompannia(){
-    
   }
 }

@@ -38,7 +38,7 @@ export class BdLocalService {
 
   guardarSolicitud(rut: string, tipo: string, texto: string){
     //verificamos si el dato existe o no por medio de lambda
-    const existe=this.solicitud.find(s=>s.strRut===rut);
+    const existe=this.solicitud.find(s=>s.strTipo===tipo);
     if (!existe) {
       this.solicitud.unshift({strRut:rut,strTipo:tipo,strTexto:texto});
       this._storage.set('solicitud',this.solicitud);

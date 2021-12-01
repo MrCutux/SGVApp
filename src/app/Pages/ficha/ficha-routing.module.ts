@@ -19,7 +19,7 @@ const routes: Routes = [
       component: DosComponent
     },
     {
-      path:"fallido",
+      path:"tres",
       component: TresComponent
     }]
   }

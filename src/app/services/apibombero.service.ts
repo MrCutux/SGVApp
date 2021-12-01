@@ -25,10 +25,18 @@ export class ApibomberoService {
 }
 
 user:any;
+rut: any;
 guardarUsuario(user:any){
   this.user = user;
 }
 
+guardarRut(rut: any){
+  this.rut = rut;
+}
+
+mostrarRut(){
+  return this.rut;
+}
 mostrarUsuario(){
   return this.user;
 }

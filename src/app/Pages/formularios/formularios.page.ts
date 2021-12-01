@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { BdLocalService } from 'src/app/services/bd-local.service';
+import { ApibomberoService } from 'src/app/services/apibombero.service';
 
 @Component({
   selector: 'app-formularios',
@@ -13,12 +14,19 @@ export class FormulariosPage implements OnInit {
   rut:string;
   tipo:string;
   texto:string;
+  id: string;
 
-  constructor(private router: Router, public bdlocalservice: BdLocalService, public alertController: AlertController) {
+  
+  constructor(private router: Router, public bdlocalservice: BdLocalService, 
+    public alertController: AlertController,
+    private api: ApibomberoService) {
     this.router.navigate(['formularios'])
+    this.rut = this.api.mostrarRut();
+    
    }
 
   ngOnInit() {
+    
   }
 
   async presentAlert(msg: string) {
@@ -65,8 +73,24 @@ export class FormulariosPage implements OnInit {
       }
     }
     if(flag){
+      
       this.bdlocalservice.guardarSolicitud(this.rut,this.tipo,this.texto);
     }  
+    
+  }
+
+  
+ 
+  mostrarFoto(){
+    
+      if(this.tipo === '5'){
+        return true;
+      }
+      else{
+        return false;
+      }
+
+    
     
   }
 
@@ -79,12 +103,17 @@ export class FormulariosPage implements OnInit {
     {id:1,tipo:"Actualizar datos"},
     {id:2,tipo:"Eliminar datos"},
     {id:3,tipo:"Agregar datos"},
-    {id:4,tipo:"Solicitar datos"}
+    {id:4,tipo:"Solicitar datos"},
+    {id:5,tipo:"Actualizar foto"}
   ];
   //metodo de limpieza de datos de los input
   limpiar(){
-    this.rut=undefined
     this.tipo=undefined
     this.texto=undefined
+    
+  }
+
+  activarCamara(){
+    this.api.camara();
   }
 }
