@@ -14,7 +14,7 @@ export class ApibomberoService {
     'Access-Control-Allow-Origin' :'*'
     })
   }
-  apiURL="https://raw.githubusercontent.com/MrCutux/SGVApp/MrCutux/apibomb.json";
+  apiURL="https://raw.githubusercontent.com/MrCutux/SGVApp/Alvaro/apibomb.json";
   constructor(private http: HttpClient) { 
 
   }
