@@ -14,6 +14,7 @@ export class InicioPage implements OnInit {
   user: any;
   rut: any;
   compannia: any;
+  username = localStorage.getItem('nombreusuario');
   constructor(private activeroute: ActivatedRoute,
     private router: Router,
     public toastController: ToastController,
@@ -24,11 +25,10 @@ export class InicioPage implements OnInit {
         this.user = this.router.getCurrentNavigation().extras.state.user;
         this.rut = this.router.getCurrentNavigation().extras.state.rut;
         api.guardarRut(this.rut);
-        api.guardarUsuario(this.user) //comprobamos en consola que es lo que tiene el parámetro
+        api.guardarUsuario(this.user) //Comprobamos en consola que es lo que tiene el parámetro
       }
     });
-  }
-
+  } 
   mostrarSpinner() {
     this.mostrar = true;
     setTimeout(() => {
@@ -75,6 +75,8 @@ export class InicioPage implements OnInit {
   salir() {
     //location.
     this.router.navigate(['/home'],)
+    localStorage.clear();
+    console.log('LOCAL STORAGE CLEAR');
   }
 
   getCompannia() {
