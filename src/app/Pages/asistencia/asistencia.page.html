@@ -13,12 +13,15 @@
     <ion-card-content color="white">
       <ion-list color="white">
         <ion-item>
-          <ion-label>Rut bombero:</ion-label>
+          <ion-label>Rut: {{rut}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Nombre Bombero:</ion-label>
+          <ion-label>Usuario: {{nombre}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
-  </ion-card>    
+  </ion-card>
+  <ion-col>
+    <ion-button shape="block" (click)="activarLectorQr()" color="azulbombero" style="padding-left: 0%;">Escanear código</ion-button>
+  </ion-col>   
 </ion-content>
