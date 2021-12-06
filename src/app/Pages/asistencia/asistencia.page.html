@@ -1,9 +1,33 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>asistencia</ion-title>
+  <ion-toolbar color='white'>
+    <ion-buttons slot='start'>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-family: BebasNeue; text-align: left;">Registrar asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="white">
+  <ion-card color="white">
+    <img src="assets/images/scanner.png">
+    <ion-card-content color="white">
+      <ion-row>
+        <ion-col size="auto">
+            <div>
+                Rut: {{rut}}
+            </div>
+        </ion-col>        
+    </ion-row>
+    <ion-row>
+      <ion-col size="auto">
+          <div>
+              Usuario: {{nombre}}
+          </div>
+      </ion-col>        
+  </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-col>
+    <ion-button shape="block" (click)="activarLectorQr()" color="azulbombero" style="padding-left: 0%;">Escanear código</ion-button>
+  </ion-col>
 </ion-content>

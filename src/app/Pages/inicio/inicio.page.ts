@@ -72,6 +72,10 @@ export class InicioPage implements OnInit {
     this.router.navigate(['/ficha/uno'],)
   }
 
+  asistencia() {
+    this.router.navigate(['/asistencia'])
+  }
+
   salir() {
     //location.
     this.router.navigate(['/home'],)
