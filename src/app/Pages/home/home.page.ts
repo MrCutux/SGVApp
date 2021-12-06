@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ToastController, AlertController, AnimationController, Animation } from '@ionic/angular';
+import { ToastController, AlertController, AnimationController, Animation, NavController } from '@ionic/angular';
 import { ApibomberoService } from 'src/app/services/apibombero.service';
 import { BdLocalService } from 'src/app/services/bd-local.service';
 
@@ -26,7 +26,8 @@ export class HomePage implements OnInit{
     public alertController: AlertController,
     private animationCtrl: AnimationController,
     public bdlocalservice: BdLocalService,
-    public apibombero: ApibomberoService
+    public apibombero: ApibomberoService,
+    public navCtrl: NavController
     ) {
       
     }
@@ -122,6 +123,10 @@ export class HomePage implements OnInit{
                 console.log("Verificado");
                 this.usuario.rut = bombero[i].rut;
                 this.inicio();
+                localStorage.setItem('ingresado','true');
+                localStorage.setItem('nombreusuario',this.usuario.user)
+                console.log('Ingresado')
+                console.log('Usuario: '+this.usuario.user+' almacenado')
                 break;
               }
               if (this.usuario.user !== bombero[i].usuario || this.usuario.pass !== bombero[i].password ){
@@ -165,4 +170,3 @@ export class HomePage implements OnInit{
   check(){
     this.bdlocalservice.validarLogin(this.user,this.pass)
   } */
-

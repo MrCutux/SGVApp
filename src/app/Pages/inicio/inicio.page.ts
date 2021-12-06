@@ -14,6 +14,7 @@ export class InicioPage implements OnInit {
   user: any;
   rut: any;
   compannia: any;
+  username = localStorage.getItem('nombreusuario');
   constructor(private activeroute: ActivatedRoute,
     private router: Router,
     public toastController: ToastController,
@@ -79,6 +80,8 @@ export class InicioPage implements OnInit {
   salir() {
     //location.
     this.router.navigate(['/home'],)
+    localStorage.clear();
+    console.log('LOCAL STORAGE CLEAR');
   }
 
   getCompannia() {
