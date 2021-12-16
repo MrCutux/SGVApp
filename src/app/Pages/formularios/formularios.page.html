@@ -37,7 +37,14 @@
                 <ion-button shape="block " (click)="limpiar() " color="facebook ">Limpiar</ion-button>
             </ion-col>
             <ion-col col-6>
-                <ion-button shape="block " (click)="guardar() " color="azulbombero ">Enviar</ion-button>
+                <!-- <ion-button shape="block " (click)="guardar() " color="azulbombero ">Enviar</ion-button> -->
+                <a class="a-viaje" href="mailto:secretario@primeraquilpue.cl?cc=&subject=Solicitud%20pendiente%20%20&body={{ this.texto }}.">
+                    <ion-button   expand="full"  color="success"> 
+                        <ion-icon name="airplane-outline" slot="start"></ion-icon>
+                        Tomar viaje
+                    </ion-button>
+                </a>
+
             </ion-col>
             <ion-col size="6" *ngIf="mostrarFoto()"  >
                 <ion-button shape="block" (click)="activarCamara()" color="azulbombero" style="padding-left: 0%;">Cargar imágen</ion-button>
