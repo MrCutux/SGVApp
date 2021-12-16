@@ -38,10 +38,10 @@
             </ion-col>
             <ion-col col-6>
                 <!-- <ion-button shape="block " (click)="guardar() " color="azulbombero ">Enviar</ion-button> -->
-                <a class="a-viaje" href="mailto:secretario@primeraquilpue.cl?cc=&subject=Solicitud%20pendiente%20%20&body={{ this.texto }}.">
-                    <ion-button   expand="full"  color="success"> 
-                        <ion-icon name="airplane-outline" slot="start"></ion-icon>
-                        Tomar viaje
+                <a class="a-viaje" href="mailto:secretario@primeraquilpue.cl?cc=&subject=Solicitud%20pendiente%20%20&body=El%20usuario%20{{this.rut}}%20ha%20enviado%20la%20siguiente%20solicitud:%20{{this.texto}}.">
+                    <ion-button shape="block" color="azulbombero" (click)="guardar()"> 
+                        <!-- <ion-icon name="airplane-outline" slot="start"></ion-icon> -->
+                        Enviar
                     </ion-button>
                 </a>
 
