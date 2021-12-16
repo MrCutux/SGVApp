@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
     <ion-toolbar color="white">
-        <ion-title class="ion-text-center" style="font-size: 15px" color="azulbombero">
+        <ion-title class="ion-text-center" style="font-size: 15px" color="azulbombero" id="titulo1">
             SGV Primera Compañía
         </ion-title>
     </ion-toolbar>
@@ -24,15 +24,15 @@
                     <ion-input type="password" [(ngModel)]="usuario.pass"></ion-input>
                 </ion-item>
             </ion-card-content>
-            <ion-button expand="block" (click)="validar()" color="azulbombero" style="font-family: BebasNeue; font-size: 20px;">
+            <ion-button expand="block" (click)="validar()" color="azulbombero" style="font-family: BebasNeue; font-size: 20px;" id="botonprueba">
                 <p style="text-align: center; font-family: BebasNeue;margin: auto;" color="azulbombero">INGRESAR</p>
-            </ion-button>            
+            </ion-button>
         </ion-card>
     </div>
-    <ion-card color="white" align=" center ">
+    <ion-card color="white" align=" center " class="animate__animated animate__backInUp">
         <img src="assets/images/logo.png " style="width:60%; height: 10%;">
     </ion-card>
     <ion-footer align=" center ">
-       <!-- <img src="assets/images/logo.png " style="width:60%; height: 10%;"> -->
+        <!-- <img src="assets/images/logo.png " style="width:60%; height: 10%;"> -->
     </ion-footer>
 </ion-content>

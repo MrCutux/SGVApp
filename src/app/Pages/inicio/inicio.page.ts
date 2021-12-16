@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { ApibomberoService } from 'src/app/services/apibombero.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
   selector: 'app-inicio',
@@ -15,11 +16,13 @@ export class InicioPage implements OnInit {
   rut: any;
   compannia: any;
   username = localStorage.getItem('nombreusuario');
+  code: any;
   constructor(private activeroute: ActivatedRoute,
     private router: Router,
     public toastController: ToastController,
     public alertController: AlertController,
-    private api: ApibomberoService) {
+    private api: ApibomberoService,
+    private barcodeScanner: BarcodeScanner) {
     this.activeroute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) { //verifico si extras viene con valor
         this.user = this.router.getCurrentNavigation().extras.state.user;
@@ -78,8 +81,12 @@ export class InicioPage implements OnInit {
     localStorage.clear();
     console.log('LOCAL STORAGE CLEAR');
   }
-
-  getCompannia() {
-
+  scan(){
+    this.barcodeScanner.scan().then(barcodeData => {
+      this.code = barcodeData.text;
+      console.log('Barcode data', barcodeData);
+     }).catch(err => {
+         console.log('Error', err);
+     });
   }
 }
