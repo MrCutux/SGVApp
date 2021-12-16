@@ -3,15 +3,16 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { retry, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Camera, CameraResultType } from '@capacitor/camera';
-//import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 //import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
+//import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApibomberoService {
+  code: any;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -20,7 +21,7 @@ export class ApibomberoService {
   }
   apiURL = "https://raw.githubusercontent.com/MrCutux/SGVApp/MrCutux/apibomb.json";
   constructor(private http: HttpClient, 
-  //private barcodeScanner: BarcodeScanner
+  private barcodeScanner: BarcodeScanner
   ) {
 
   }
@@ -70,7 +71,7 @@ export class ApibomberoService {
     takePicture();
   }
 
-  camaraQr(){
+  /* camaraQr(){
     const startScan = async () => {
       BarcodeScanner.hideBackground(); // make background of WebView transparent
     
@@ -81,13 +82,14 @@ export class ApibomberoService {
         console.log(result.content); // log the raw scanned content
       }
     };
-  }
-  /* activarLectorQr(){
+  } */
+  activarLectorQr(){
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+      this.code = barcodeData.text;
+      console.log('Barcode data', this.code);
      }).catch(err => {
          console.log('Error', err);
      });
-  } */
+  }
 
 }

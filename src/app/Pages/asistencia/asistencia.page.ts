@@ -23,6 +23,6 @@ export class AsistenciaPage implements OnInit {
 
   activarLectorQr(){
     console.log('activando lector qr');
-    this.api.camaraQr();
+    this.api.activarLectorQr();
   }
 }
