@@ -21,8 +21,8 @@ export class AsistenciaPage implements OnInit {
   ngOnInit() {
   }
 
-  activarLectorQr(){
+  /* activarLectorQr(){
     console.log('activando lector qr');
     this.api.activarLectorQr();
-  }
+  } */
 }

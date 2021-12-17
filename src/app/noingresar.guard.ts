@@ -20,10 +20,5 @@ export class NoIngresarGuard implements CanActivate {
         return true;
       }
   }
-<<<<<<< HEAD
-
-}
-=======
   
 }
->>>>>>> Alvaro
