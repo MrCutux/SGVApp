@@ -19,10 +19,8 @@ export class ApibomberoService {
       'Access-Control-Allow-Origin': '*'
     })
   }
-  apiURL = "https://raw.githubusercontent.com/MrCutux/SGVApp/MrCutux/apibomb.json";
-  constructor(private http: HttpClient, 
-  private barcodeScanner: BarcodeScanner
-  ) {
+  apiURL="https://raw.githubusercontent.com/MrCutux/SGVApp/Alvaro/apibomb.json";
+  constructor(private http: HttpClient) { 
 
   }
   getBomberos(): Observable<any> {
@@ -83,13 +81,13 @@ export class ApibomberoService {
       }
     };
   } */
-  activarLectorQr(){
+/*   activarLectorQr(){
     this.barcodeScanner.scan().then(barcodeData => {
       this.code = barcodeData.text;
       console.log('Barcode data', this.code);
      }).catch(err => {
          console.log('Error', err);
      });
-  }
+  } */
 
 }

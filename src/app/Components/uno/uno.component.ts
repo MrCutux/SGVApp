@@ -7,6 +7,7 @@ import { ApibomberoService } from 'src/app/services/apibombero.service';
   styleUrls: ['./uno.component.scss'],
 })
 export class UnoComponent implements OnInit {
+  usuario: any;
   bombero:any ={
     rut: "",
     nombre1: "",
@@ -21,9 +22,9 @@ export class UnoComponent implements OnInit {
     cargo: "",
     estado: "",
   }
-  usuario: any;
+  
   constructor(private api: ApibomberoService) { }
-
+  
   ngOnInit() {
     this.usuario = this.api.mostrarUsuario();
     this.obtenerDatos();

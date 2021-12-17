@@ -21,4 +21,10 @@ describe('FormulariosPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //Usando  SpyOn en el metodo guardar solicitud
+  it('deberia guardar la solicitud', () =>{
+    spyOn(component, 'guardar').and.stub;
+    component.guardar();
+  });
 });

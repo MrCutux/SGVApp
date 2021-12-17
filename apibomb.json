@@ -172,6 +172,7 @@
             "nreg": "Prueba",
             "cargo": "Prueba",
             "estado": "Prueba",
+            "email": "i.cuturrufo@duocuc.cl",
             "usuario": "nnn",
             "password": "111"
         },
@@ -193,4 +194,3 @@
         }
     ]
 }
-

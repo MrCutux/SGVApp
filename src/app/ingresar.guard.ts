@@ -5,25 +5,21 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class NoIngresarGuard implements CanActivate {
-  constructor(private router: Router){
+export class IngresarGuard implements CanActivate {
+  constructor(private router:Router){ 
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if((localStorage.length) != 0){
-        this.router.navigate(['/inicio']);
-        console.log("Ingresado: False");
-        return false;
-      }else{
+      if(localStorage.length == 1){
+        this.router.navigate(['/home'])
         console.log("Ingresado: True");
         return true;
+      }else{
+        // this.router.navigate(['/login']);
+        console.log("Ingresado: False");
+        return false;
       }
   }
-<<<<<<< HEAD
-
-}
-=======
   
 }
->>>>>>> Alvaro
